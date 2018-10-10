@@ -1,0 +1,15 @@
+echo "[*] Installing Larxygen"
+
+echo "[*] Removing old Larxygen directory if present"
+rm -rf ~/bin/_larxygen
+
+echo "[*] Creating directory ~/bin/_larxygen"
+mkdir ~/bin/_larxygen
+
+echo "[*] Copying files to ~/bin/_larxygen"
+cp -f src/* ~/bin/_larxygen
+
+echo "[*] Creating symlink in ~/bin"
+ln -s ~/bin/_larxygen/larxygen ~/bin/larxygen -f
+
+echo "[*] Larxygen successfully installed!"

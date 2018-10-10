@@ -1,6 +1,6 @@
 <?php
     //Version number
-    $ver = "0.1";
+    $ver = "1.0";
 
     //Define colors
     $red = "\033[1;31m";
