@@ -10,15 +10,15 @@
     $blue = "\033[1;34m";
     $rc = "\033[0m";
     
-    //Larxygen keywords
+    //Explicartu keywords
     $keywords = ["class", "is", "var", "function", "does", "parameter", "end-class", "returns", "todo", "details", "end-function", "project-title", "project-description"];
 
     //Check call arguments
     if(count($argv) < 2){
         echo($red."Error:$rc no input files specified.\n");
-        fail($blue."Usage:$rc larxygen <file to parse> <file to parse> ...\n");
+        fail($blue."Usage:$rc explicartu <file to parse> <file to parse> ...\n");
     }else{
-        echo($blue."Larxygen$brown $ver$rc, ready to document!\n");
+        echo($blue."Explicartu$brown $ver$rc, ready to document!\n");
     }
     
     //If arguments are right, load all files specified
@@ -33,9 +33,9 @@
         }
     }
     
-    //If all files were loaded, proceed to remove everything that's not a possible Larxygen directive.
+    //If all files were loaded, proceed to remove everything that's not a possible Explicartu directive.
     echo("- Obtaining comments from sources... ");
-    $larxygen_lines = [];
+    $explicartu_lines = [];
     foreach($file_contents as $file){
         $lines = explode("\n", $file);
         //Trim all lines
@@ -62,20 +62,20 @@
             if(strlen($line) == 0){
                 continue;
             }
-            //If the comment doesn't start with (, then it's not a Larxygen directive.
+            //If the comment doesn't start with (, then it's not a Explicartu directive.
             //Splice and continue.
             if($line[0] != "("){
                 continue;
             }
-            array_push($larxygen_lines, $line);
+            array_push($explicartu_lines, $line);
         }
     }
     unset($file_contents);
     echo($green."Done!$rc\n");
     
     //Proceed to parse each line and remove each possible directive that's not a real one.
-    echo("- Obtaining Larxygen directives... ");
-    foreach($larxygen_lines as $linenum => $line){
+    echo("- Obtaining Explicartu directives... ");
+    foreach($explicartu_lines as $linenum => $line){
         //Remove the first parenthesys
         $line = substr($line, 1);
         //Get what's inside the parenthesys and the rest in $parts
@@ -84,7 +84,7 @@
         $keyword = explode(" ", $parts[0], 2)[0];
         //If the keyword is not a valid keyword, splice the line.
         if(!in_array($keyword, $keywords)){
-            array_splice($larxygen_lines, $linenum, 1);
+            array_splice($explicartu_lines, $linenum, 1);
         }
     }
     echo($green."Done!$rc\n");
@@ -99,7 +99,7 @@
     $index = [];
     $project_title = "Untitled Project";
     $project_description = "";
-    foreach($larxygen_lines as $linenum => $line){
+    foreach($explicartu_lines as $linenum => $line){
         //Remove the first parenthesys
         $line = substr($line, 1);
         //Get what's inside the parenthesys and the rest in $description
@@ -219,7 +219,7 @@
     
     //Create output file
     echo("- Creating output file... ");
-    $output = "<title>" . $project_title . " | Larxygen</title>";
+    $output = "<title>" . $project_title . " | Explicartu</title>";
     $output = $output . "<meta charset='utf-8'>";
     $output = $output . "<style>";
     $output = $output . "html{ border-top: 8px solid grey;}";
@@ -260,7 +260,7 @@
     
     //Save output file
     echo("- Saving output... ");
-    file_put_contents("larxygen.html", $output);
+    file_put_contents("explicartu.html", $output);
     echo($green."Done!$rc\n");
     die("Compilation finished.\n");
     
