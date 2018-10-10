@@ -5,7 +5,11 @@ Explicartu is a tool for writing software reference documentation. The documenta
 # 🔬 What can Explicartu do?
 It compiles special directives written within comments in your source files to pages that look like the picture below. It can be used to document your code and make it easier to read and grab on.
 
-![Explicartu Example](https://lartu.net/explicartu.png)
+Source Code                               |  Compiled
+:----------------------------------------:|:-------------------------:
+![](https://lartu.net/cmasmas.png "code") | ![](https://lartu.net/explicartu.png "rendered")
+
+
 
 # ❓ How to Install
 Download or clone the repository, run `install` and you are ready to go. Once installed, the downloaded files can be safely deleted. By default, Explicartu is installed to `~/bin/_explicartu` and run from there.
