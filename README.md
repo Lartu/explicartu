@@ -15,4 +15,4 @@ Source Code                               |  Compiled
 Download or clone the repository, run `install` and you are ready to go. Once installed, the downloaded files can be safely deleted. By default, Explicartu is installed to `~/bin/_explicartu` and run from there.
 
 # 🚀 How to Use
-To compile a file to an Explicartu Page, go to the directory where your source is and run `explicartu <yourfile>`. If you want to compile more than one file to the same page, run `explicartu <yourfile> <otherfile> <otherotherfile>`, etc. A file named `explicartu.html` will be generated in this same directory.
+To compile a file to an Explicartu Page, go to the directory where your source is and run `explicartu <yourfile>`. If you want to compile more than one file to the same page, run `explicartu <yourfile> <otherfile> <otherotherfile>`, etc. A file named `explicartu.html` will be generated in this same directory. There's an example project in the `example` folder of this repository, check it out!
