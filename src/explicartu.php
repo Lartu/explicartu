@@ -11,7 +11,7 @@
     $rc = "\033[0m";
     
     //Explicartu keywords
-    $keywords = ["class", "is", "var", "function", "does", "parameter", "end-class", "returns", "todo", "details", "end-function", "project-title", "project-description"];
+    $keywords = ["class", "is", "var", "function", "does", "parameter", "end-class", "returns", "todo", "end-function", "project-title", "project-description"];
 
     //Check call arguments
     if(count($argv) < 2){
@@ -227,7 +227,7 @@
     $output = $output . "a{ color: #3274c9; text-decoration: none;}";
     $output = $output . "a:hover{ text-decoration: underline;}";
     $output = $output . "h2{ margin-bottom: 0px; margin-top: 0px;}";
-    $output = $output . ".class{ border-left: 8px solid #FF9900; padding-left: 1em; background-color: #fff2e5; padding-top: 1em;
+    $output = $output . ".class{ border-left: 8px solid #FF9900; padding-left: 1em; background-color: #fff2e5; padding-top: 1em; padding-bottom: 1em;
     overflow:hidden;}";
     $output = $output . ".class h2{ color: #ff9900;}";
     $output = $output . ".var{ border-left: 8px solid #298e53; padding-left: 1em; background-color: #eff9f4;
@@ -244,7 +244,7 @@
     $output = $output . "</style>";
     $output = $output . "<center><h1>".$project_title."</h1></center>";
     if($project_description != ""){
-        $output = $output . "<div style='text-align:justify; max-width:500px; margin:auto; font-size:0.9em; color:#555555; margin-top:0.5em;'><i>".$project_description."</i></div>";
+        $output = $output . "<div style='text-align:center; max-width:500px; margin:auto; font-size:0.9em; color:#555555; margin-top:0.5em;'><i>".$project_description."</i></div>";
     }
     $output = $output . "<div class='index'><h2 id='index'>Index</h2><ul style='margin-top:0px'>";
     sort($index);
