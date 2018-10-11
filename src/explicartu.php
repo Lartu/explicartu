@@ -11,7 +11,7 @@
     $rc = "\033[0m";
     
     //Explicartu keywords
-    $keywords = ["class", "is", "var", "function", "does", "parameter", "end-class", "returns", "todo", "end-function", "project-title", "project-description"];
+    $keywords = ["class", "is", "var", "function", "does", "parameter", "end-class", "returns", "todo", "end-function", "project-title", "project-description", "details", "important"];
 
     //Check call arguments
     if(count($argv) < 2){
@@ -46,6 +46,7 @@
         foreach($lines as $linenum => $line){
             $lines[$linenum] = "";
             //Find where the comment starts (if any)
+            //TODO: Change this to a substring matching between the line and the desired comment initializer.
             $hasComment = false;
             for($i = 0; $i < strlen($line)-1; ++$i){
                 if($line[$i]  == "/" && $line[$i] == $line[$i+1]){
@@ -151,7 +152,16 @@
                     $functionSection = $functionSection . "<b>Description:</b> " . $description . "<br>";
                 }
                 break;
-                
+            case("details"):
+                if(strlen($inFunction) == 0){
+                    $superSection = $superSection . "<p style='margin-top:0px;'><b>Details:</b> " . $description . "</p>";
+                }else{
+                    if(strlen($inClass) != 0){
+                        $functionSection = $functionSection . "<b>-</b> ";
+                    }
+                    $functionSection = $functionSection . "<b>Details:</b> " . $description . "<br>";
+                }
+                break;
             case("todo"):
                 if(strlen($inFunction) == 0){
                     $superSection = $superSection . "<p class='todo'><b>TODO:</b> <i>" . $description . "</i></p>";
@@ -161,6 +171,18 @@
                         $functionSection = $functionSection . "<b>-</b> ";
                     }
                     $functionSection = $functionSection . "<b>TODO:</b> <i>" . $description . "</i></span><br>";
+                }
+                break;
+                
+            case("important"):
+                if(strlen($inFunction) == 0){
+                    $superSection = $superSection . "<p class='important'><b>Important: </b> <i>" . $description . "</i></p>";
+                }else{
+                    $functionSection = $functionSection . "<span class='important'>";
+                    if(strlen($inClass) != 0){
+                        $functionSection = $functionSection . "<b>-</b> ";
+                    }
+                    $functionSection = $functionSection . "<b>Important: </b> <i>" . $description . "</i></span><br>";
                 }
                 break;
                 
@@ -239,6 +261,7 @@
     $output = $output . ".prop{ color: #298e53; font-weight: 700;}";
     $output = $output . ".met{ color: #b71919; font-weight: 700;}";
     $output = $output . ".todo{ background-color: #dddd80;}";
+    $output = $output . ".important{ background-color: #fc8585; color:#660707; }";
     $output = $output . ".datatype{ font-family:monospace; color:blue;}";
     $output = $output . ".variable{ font-family:monospace; color:#234f03; font-weight:700; font-size: 1.1em;}";
     $output = $output . "</style>";
