@@ -212,7 +212,7 @@
                 if(strlen($inClass) == 0){
                     $functionSection = "<h2> Global function '" . $description . "'</h2>";
                 }else{
-                    $functionSection = "<p><span class='met'>Method: </span>" . $description . "<br>";
+                    $functionSection = "<p><span class='met'>Method: </span> <span class='method'>" . $description . "</span><br>";
                 }
                 $inFunction = $description;
                 break;
@@ -249,21 +249,20 @@
     $output = $output . "a{ color: #3274c9; text-decoration: none;}";
     $output = $output . "a:hover{ text-decoration: underline;}";
     $output = $output . "h2{ margin-bottom: 0px; margin-top: 0px;}";
-    $output = $output . ".class{ border-left: 8px solid #FF9900; padding-left: 1em; background-color: #fff2e5; padding-top: 1em; padding-bottom: 1em;
-    overflow:hidden;}";
+    $output = $output . ".class{ border-left: 8px solid #FF9900; padding: 1em; background-color: #fff2e5; overflow:hidden;}";
     $output = $output . ".class h2{ color: #ff9900;}";
-    $output = $output . ".var{ border-left: 8px solid #298e53; padding-left: 1em; background-color: #eff9f4;
+    $output = $output . ".var{ border-left: 8px solid #298e53; padding-left: 1em; padding-right: 1em; background-color: #eff9f4;
     overflow:hidden;}";
-    $output = $output . ".fun{ border-left: 8px solid #b71919; padding-left: 1em; background-color: #f2eaea; padding-top: 1em;
-    overflow:hidden; padding-bottom: 1em;}";
+    $output = $output . ".fun{ border-left: 8px solid #b71919; background-color: #f2eaea; overflow:hidden; padding: 1em;}";
     $output = $output . ".index{ padding-left: 1em; padding-top: 2em; overflow:hidden; padding-bottom: 1em; }";
     $output = $output . ".fun h2{ color: #b71919;}";
     $output = $output . ".prop{ color: #298e53; font-weight: 700;}";
-    $output = $output . ".met{ color: #b71919; font-weight: 700;}";
+    $output = $output . ".met{ color: #d14040; font-weight: 700;}";
     $output = $output . ".todo{ background-color: #dddd80;}";
     $output = $output . ".important{ background-color: #fc8585; color:#660707; }";
     $output = $output . ".datatype{ font-family:monospace; color:blue;}";
     $output = $output . ".variable{ font-family:monospace; color:#234f03; font-weight:700; font-size: 1.1em;}";
+    $output = $output . ".method{ font-family:monospace; color:#b71919; font-weight:700; font-size: 1.1em;}";
     $output = $output . "</style>";
     $output = $output . "<center><h1>".$project_title."</h1></center>";
     if($project_description != ""){
