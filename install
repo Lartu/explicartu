@@ -3,7 +3,7 @@ echo "[*] Installing Explicartu"
 if [ ! -d ~/bin ]; then
   echo "[*] ~/bin folder not found. Creating and adding to path...";
   mkdir ~/bin;
-  echo "PATH=$PATH:~/bin" >> ~/.bashrc
+  echo "PATH=$PATH:~/bin" >> ~/.bashrc;
 fi
 
 echo "[*] Removing old Explicartu directory if present"
