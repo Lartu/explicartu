@@ -2,6 +2,18 @@
 
 using namespace std;
 
+//-------------------------------------------------------------------------------------------------------------
+//Hi there! Welcome to Explicartu. The following directives are available (read below to learn how to use them):
+//class, is, var, function,does, parameter, end-class, returns, todo, end-function, project-title, project-description, details, important
+//
+//F.A.Q.:
+//Q: What's the difference between the directives 'is' and 'does'?
+//A: Nothing. Both can be used interchangeably.
+//
+//Q: Can I spread a single directive across multiple lines / comments?
+//A: Sorry, you can't. Every directive and its details must be written in the same line.
+//-------------------------------------------------------------------------------------------------------------
+
 //(project-title) Demo Explicartu Project
 //(project-description) A demo that showcasts all the features of Explicartu!
 
