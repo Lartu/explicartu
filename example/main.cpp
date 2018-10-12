@@ -24,6 +24,7 @@ void printHi(int times, string saySomething){
 //(function) main
 //(does) Prints 'Hello World' and calls 'printHi'.
 //(returns int) Returns 1 and exits.
+//(important) This funcion returns 1, not 0!
 //(end-function)
 int main(){
     cout << "Hello World!";
@@ -49,6 +50,7 @@ public:
     //(function) addNumbers
     //(does) Adds a number to the property 'someNumber'.
     //(parameter otherNumber int) Number to add.
+    //(details) You can add details to functions and classes.
     //(end-function)
     void addNumbers(int otherNumber){
         this->someNumber += otherNumber;
